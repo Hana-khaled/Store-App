@@ -1,11 +1,11 @@
-﻿using Store.Service.Services.Product.Dtos;
+﻿using Store.Service.Services.ProductService.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Store.Service.Services.Product
+namespace Store.Service.Services.ProductService
 {
     public interface IProductService
     {
