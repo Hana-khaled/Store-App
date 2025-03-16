@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Store.Data.Contexts;
 using Store.Repository.Interfaces;
 using Store.Repository.Repositories;
+using Store.Service.Services.ProductService;
 using Store.Service.Services.ProductService.Dtos;
 using Store.Web.Helper;
 
@@ -21,6 +22,7 @@ namespace Store.Web
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+            builder.Services.AddScoped<IProductService, ProductService>();
 
             builder.Services.AddAutoMapper(typeof(ProductProfile));
 
