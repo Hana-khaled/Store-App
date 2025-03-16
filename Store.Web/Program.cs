@@ -43,6 +43,8 @@ namespace Store.Web
 
             app.UseHttpsRedirection();
 
+            app.UseStaticFiles();
+
             app.UseAuthorization();
 
 
