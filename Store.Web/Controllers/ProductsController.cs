@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Store.Repository.Specification.ProductSpecifications;
 using Store.Service.Services.ProductService;
 using Store.Service.Services.ProductService.Dtos;
 
@@ -23,8 +24,8 @@ namespace Store.Web.Controllers
         [HttpGet]
         //[HttpGet("GetAllProducts")] // for specifiying route of api to avoid conflict between actions
         // but it is better to make it at [Route("api/[controller]")] instead of this(for each action)
-        public async Task<ActionResult<IReadOnlyList<ProductDetailsDto>>> GetAllProductsAsync()
-            => Ok(await _productService.GetAllProductsAsync());
+        public async Task<ActionResult<IReadOnlyList<ProductDetailsDto>>> GetAllProductsAsync([FromQuery] ProductSpecification input)
+            => Ok(await _productService.GetAllProductsAsync(input));
 
         [HttpGet]
         public async Task<ActionResult<IReadOnlyList<BrandTypeDetailsDto>>> GetAllBrandsAsync()

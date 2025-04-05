@@ -37,7 +37,7 @@ namespace Store.Repository.Repositories
 
         public void UpdateAsync(TEntity entity)
             => _context.Set<TEntity>().Update(entity);
-        public async Task<IReadOnlyList<TEntity>> GetWithSpecificationsAllAsync(ISpecification<TEntity> specs)
+        public async Task<IReadOnlyList<TEntity>> GetAllWithSpecificationsAsync(ISpecification<TEntity> specs)
             => await AddSpecifications(specs).ToListAsync();
 
         public async Task<TEntity> GetWithSpecificationsByIdAsync(ISpecification<TEntity> specs)

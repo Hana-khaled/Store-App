@@ -17,6 +17,6 @@ namespace Store.Repository.Interfaces
         void UpdateAsync(TEntity entity);
         void DeleteAsync(TEntity entity);
         Task<TEntity> GetWithSpecificationsByIdAsync(ISpecification<TEntity> specs);
-        Task<IReadOnlyList<TEntity>> GetWithSpecificationsAllAsync(ISpecification<TEntity> specs);
+        Task<IReadOnlyList<TEntity>> GetAllWithSpecificationsAsync(ISpecification<TEntity> specs);
     }
 }
