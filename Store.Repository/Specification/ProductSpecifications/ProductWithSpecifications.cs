@@ -18,6 +18,8 @@ namespace Store.Repository.Specification.ProductSpecifications
 
             AddOrderBy(p => p.Name);
 
+            ApplyPagination(specs.PageSize * (specs.PageIndex - 1), specs.PageSize);
+
             if (!string.IsNullOrEmpty(specs.Sort))
             {
                 switch (specs.Sort)

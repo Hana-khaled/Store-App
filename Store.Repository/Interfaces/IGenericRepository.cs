@@ -18,5 +18,6 @@ namespace Store.Repository.Interfaces
         void DeleteAsync(TEntity entity);
         Task<TEntity> GetWithSpecificationsByIdAsync(ISpecification<TEntity> specs);
         Task<IReadOnlyList<TEntity>> GetAllWithSpecificationsAsync(ISpecification<TEntity> specs);
+        Task<int> GetcountWithSpecificationsAsync(ISpecification<TEntity> specs);
     }
 }

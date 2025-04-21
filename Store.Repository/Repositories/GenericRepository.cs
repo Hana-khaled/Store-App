@@ -46,5 +46,7 @@ namespace Store.Repository.Repositories
         private IQueryable<TEntity> AddSpecifications(ISpecification<TEntity> specs)
             => SpecificationEvaluator<TEntity, TKey>.GetQuery(_context.Set<TEntity>(), specs);
 
+        public async Task<int> GetcountWithSpecificationsAsync(ISpecification<TEntity> specs)
+            => await AddSpecifications(specs).CountAsync();
     }
 }
