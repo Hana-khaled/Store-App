@@ -17,7 +17,7 @@ namespace Store.Service.HandleResponses
         public int StatusCode { get; set; }
         public string? Message { get; set; }
 
-        public static string GetStatusDefaultMessage(int statusCode) 
+        private string GetStatusDefaultMessage(int statusCode) 
             => statusCode switch
             {
                 >= 100 and < 200 => "Informational response",
