@@ -24,7 +24,7 @@ namespace Store.Repository
                 // on the list without being intialized will lead to error
 
                 // 1- read data from txt file (File.ReadAllText)
-                // 2- deserilize data json -> object (JsonSerializer.Deserialize<Tvale>(json object))
+                // 2- deserilize data json -> object (JsonSerializer.Deserialize<Tvalue>(json object))
                 // 3- add data to db if not null (context.Products.AddRangeAsync(products))
                 // 4- after handling all data -> await context.SaveChangesAsync();
 
@@ -55,6 +55,15 @@ namespace Store.Repository
 
                     if (products is not null)
                         await context.Products.AddRangeAsync(products);
+                }
+
+                if(context.DeliveryMethods != null && !context.DeliveryMethods.Any())
+                {
+                    var deliveryMethodsData = File.ReadAllText("../Store.Repository/SeedData/delivery.json");
+                    var deliveryMethods = JsonSerializer.Deserialize<List<DeliveryMethod>>(deliveryMethodsData);
+
+                    if (deliveryMethods is not null)
+                        await context.DeliveryMethods.AddRangeAsync(deliveryMethods);
                 }
 
                 await context.SaveChangesAsync();
