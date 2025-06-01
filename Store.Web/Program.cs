@@ -23,8 +23,12 @@ namespace Store.Web
             // Add services to the container.
 
             builder.Services.AddControllers();
+
             builder.Services.AddDbContext<StoreDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            builder.Services.AddDbContext<StoreIdentityDbContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection")));
 
             builder.Services.AddSingleton<IConnectionMultiplexer>(config =>
             {
@@ -55,8 +59,9 @@ namespace Store.Web
 
             app.UseStaticFiles();
 
-            app.UseAuthorization();
+            app.UseAuthentication();
 
+            app.UseAuthorization();
 
             app.MapControllers();
 
