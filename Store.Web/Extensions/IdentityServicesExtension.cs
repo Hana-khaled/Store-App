@@ -7,7 +7,7 @@ namespace Store.Web.Extensions
 {
     public static class IdentityServicesExtension
     {
-        public static IServiceCollection AddIdentitySerices(this IServiceCollection services)
+        public static IServiceCollection AddIdentityServices(this IServiceCollection services)
         {
             // 1- Registering the identity core in our application for AppUser
             var builder = services.AddIdentityCore<AppUser>();
