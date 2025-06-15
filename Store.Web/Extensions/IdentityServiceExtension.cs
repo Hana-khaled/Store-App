@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Store.Web.Extensions
 {
-    public static class IdentityServicesExtension
+    public static class IdentityServiceExtension
     {
         public static IServiceCollection AddIdentityServices(this IServiceCollection services, IConfiguration _config)
         {

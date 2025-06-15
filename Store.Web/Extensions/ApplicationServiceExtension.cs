@@ -12,7 +12,7 @@ using Store.Service.Services.TokenService;
 
 namespace Store.Web.Extensions
 {
-    public static class ApplicationServicesExtension
+    public static class ApplicationServiceExtension
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
