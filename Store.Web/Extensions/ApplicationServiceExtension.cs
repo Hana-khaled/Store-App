@@ -8,10 +8,12 @@ using Store.Service.Services.BasketService.Dtos;
 using Store.Service.Services.CacheService;
 using Store.Service.Services.ProductService;
 using Store.Service.Services.ProductService.Dtos;
+using Store.Service.Services.TokenService;
+using Store.Service.Services.UserService;
 
 namespace Store.Web.Extensions
 {
-    public static class ApplicationServicesExtension
+    public static class ApplicationServiceExtension
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
@@ -20,6 +22,10 @@ namespace Store.Web.Extensions
             services.AddScoped<IProductService, ProductService>();
 
             services.AddScoped<ICacheService, CacheService>();
+
+            services.AddScoped<ITokenService, TokenService>();
+
+            services.AddScoped<IUserService, UserService>();
 
             services.AddScoped<IBasketRepository, BasketRepository>();
             services.AddScoped<IBasketService, BasketService>();
