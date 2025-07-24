@@ -11,7 +11,7 @@ namespace Store.Service.Services.OrderService.Dtos
     {
 
         public string BasketId { get; set; }
-        public string BuyerId { get; set; }
+        public int BuyerId { get; set; }
         [Required]
         public int DeliveryMethodId { get; set; }
         public ShippingAddressDto ShippingAddress { get; set; }

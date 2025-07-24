@@ -6,6 +6,7 @@ using Store.Service.HandleResponses;
 using Store.Service.Services.BasketService;
 using Store.Service.Services.BasketService.Dtos;
 using Store.Service.Services.CacheService;
+using Store.Service.Services.OrderService;
 using Store.Service.Services.OrderService.Dtos;
 using Store.Service.Services.ProductService;
 using Store.Service.Services.ProductService.Dtos;
@@ -21,6 +22,8 @@ namespace Store.Web.Extensions
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddScoped<IProductService, ProductService>();
+
+            services.AddScoped<IOrderService, OrderService>();
 
             services.AddScoped<ICacheService, CacheService>();
 
