@@ -16,5 +16,6 @@ namespace Store.Service.Services.OrderService.Dtos
         public decimal Total { get; set; }
         public decimal ShippingPrice { get; set; }
         public string? BasketId { get; set; }
+        public string? PaymentIntentId { get; set; }
     }
 }
