@@ -90,7 +90,7 @@ namespace Store.Service.Services.PaymentService
                     // we (*100) because we want to convert from cent to dollar
                     Amount = (long)basket.BasketItems.Sum(item => (item.Price * 100) * item.Quantity) + (long)(shippingPrice * 100),
                     Currency = "usd",
-                    PaymentMethodTypes = new List<string> { "card" }
+                    PaymentMethodTypes = new List<string> { "card" }// card: Brandtype, 14 number, cvc, Date
                 };
 
                 // created for the first time

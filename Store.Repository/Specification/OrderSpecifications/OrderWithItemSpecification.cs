@@ -9,7 +9,7 @@ namespace Store.Repository.Specification.OrderSpecifications
 {
     public class OrderWithItemSpecification : BaseSpecification<Order>
     {
-        public OrderWithItemSpecification(int buyerId) : base(order => order.BuyerId == buyerId)
+        public OrderWithItemSpecification(string buyerEmail) : base(order => order.BuyerEmail == buyerEmail)
         {
             AddIncludes(order => order.DeliveryMethod);
             AddIncludes(order => order.OrderItems);
