@@ -115,6 +115,7 @@ namespace Store.Service.Services.OrderService
 
             var mappedOrder = _mapper.Map<OrderDetailsDto>(order);
             return mappedOrder;
+
             #endregion
         }
         public async Task<IReadOnlyList<DeliveryMethod>> GetDeliveryMethodsAsync()
