@@ -22,7 +22,7 @@ namespace Store.Repository.Repositories
         public async Task AddAsync(TEntity entity)
             => await _context.Set<TEntity>().AddAsync(entity);
 
-        public async void DeleteAsync(TEntity entity)
+        public void Delete(TEntity entity)
             => _context.Set<TEntity>().Remove(entity);
 
         public async Task<IReadOnlyList<TEntity>> GetAllAsNoTrackingAsync()
@@ -35,7 +35,7 @@ namespace Store.Repository.Repositories
             => await _context.Set<TEntity>().FindAsync(id);
 
 
-        public void UpdateAsync(TEntity entity)
+        public void Update(TEntity entity)
             => _context.Set<TEntity>().Update(entity);
         public async Task<IReadOnlyList<TEntity>> GetAllWithSpecificationsAsync(ISpecification<TEntity> specs)
             => await AddSpecifications(specs).ToListAsync();

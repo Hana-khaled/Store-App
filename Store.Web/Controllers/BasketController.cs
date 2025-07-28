@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Store.Service.Services.BasketService;
 using Store.Service.Services.BasketService.Dtos;
 
 namespace Store.Web.Controllers
 {
+    [Authorize]
     public class BasketController : BaseController
     {
         private readonly IBasketService _basketService;

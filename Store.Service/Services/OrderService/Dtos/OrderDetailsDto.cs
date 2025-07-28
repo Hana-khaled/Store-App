@@ -5,7 +5,7 @@ namespace Store.Service.Services.OrderService.Dtos
     public class OrderDetailsDto
     {
         public Guid Id { get; set; }
-        public int BuyerId { get; set; }
+        public string BuyerEmail { get; set; }
         public DateTimeOffset OrderDate { get; set; } = DateTimeOffset.Now;
         public ShippingAddress ShippingAddress { get; set; }
         public string DeliveryMethodName { get; set; }
@@ -16,5 +16,6 @@ namespace Store.Service.Services.OrderService.Dtos
         public decimal Total { get; set; }
         public decimal ShippingPrice { get; set; }
         public string? BasketId { get; set; }
+        public string? PaymentIntentId { get; set; }
     }
 }
